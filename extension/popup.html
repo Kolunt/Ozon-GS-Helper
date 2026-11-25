@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ozon GS Helper</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Ozon GS Helper</h1>
+      <p class="description">
+        Добавляет GS-разделители в код маркировки перед отправкой в Ozon.
+      </p>
+      <label class="toggle">
+        <input type="checkbox" id="enabled" />
+        <span>Автоформатирование включено</span>
+      </label>
+      <button id="format" type="button" class="primary">Форматировать поле</button>
+      <p class="hint">После сканирования нажмите кнопку или Alt+Shift+M</p>
+      <p id="status" class="status"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

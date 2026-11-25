@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Ozon GS Helper",
+  "version": "1.3.1",
+  "description": "Автоматически добавляет GS-разделители в коды маркировки на Ozon Seller",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["https://seller.ozon.ru/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://seller.ozon.ru/*"],
+      "js": ["content-bridge.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": ["https://seller.ozon.ru/*"],
+      "js": ["utils.js", "content-main.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    }
+  ],
+  "commands": {
+    "format-marking-code": {
+      "suggested_key": {
+        "default": "Alt+Shift+M"
+      },
+      "description": "Форматировать код маркировки в активном поле"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Ozon GS Helper",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
